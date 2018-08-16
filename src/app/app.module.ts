@@ -1,6 +1,7 @@
 import { environment } from "./../environments/environment";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { RouterModule } from "@angular/router";
 import { AngularFireModule } from "angularfire2";
 import { AngularFireDatabaseModule } from "angularfire2/database";
 import { AngularFireAuthModule } from "angularfire2/auth";
@@ -15,7 +16,12 @@ import { ShoppingCartComponent } from "./shopping-cart/shopping-cart.component";
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    RouterModule.forRoot([
+      { path: "", component: ShoppingCartComponent },
+      { path: "shopping-cart", component: ShoppingCartComponent },
+      { path: "**", component: ShoppingCartComponent }
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
