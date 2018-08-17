@@ -7,9 +7,10 @@ import { AngularFireAuthModule } from "angularfire2/auth";
 
 import { AppComponent } from "./app.component";
 import { NavbarComponent } from "./navbar/navbar.component";
+import { ProductCardComponent } from './product-card/product-card.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent],
+  declarations: [AppComponent, NavbarComponent, ProductCardComponent],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
