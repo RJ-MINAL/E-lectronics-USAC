@@ -11,8 +11,15 @@ import { NavbarComponent } from "./navbar/navbar.component";
 import { ShoppingCartComponent } from "./shopping-cart/shopping-cart.component";
 import { ProductCardComponent } from "./product-card/product-card.component";
 
+import { ShoppingCartService } from "./services/shopping-cart.service";
+
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, ShoppingCartComponent, ProductCardComponent],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    ShoppingCartComponent,
+    ProductCardComponent
+  ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
@@ -24,7 +31,7 @@ import { ProductCardComponent } from "./product-card/product-card.component";
       { path: "**", component: ShoppingCartComponent }
     ])
   ],
-  providers: [],
+  providers: [ShoppingCartService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
