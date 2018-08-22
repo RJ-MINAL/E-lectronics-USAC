@@ -1,12 +1,25 @@
-import { Component, OnInit } from "@angular/core";
+import { ShoppingCart } from './../models/shopping-cart.model';
+import { ShoppingCartService } from './../services/shopping-cart.service';
+import { Product } from './../models/product.model';
+import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: "product-card",
-  templateUrl: "./product-card.component.html",
-  styleUrls: ["./product-card.component.css"]
+  selector: 'product-card',
+  templateUrl: './product-card.component.html',
+  styleUrls: ['./product-card.component.css']
 })
-export class ProductCardComponent implements OnInit {
-  constructor() {}
+export class ProductCardComponent {
+  @Input('product') product: Product;
+  @Input('show-actions') showActions = true;
+  @Input('shopping-cart') shoppingCart: ShoppingCart;
 
-  ngOnInit() {}
+  constructor(private cartService: ShoppingCartService) { }
+
+  //agregando al carrito de compras
+  addToCart() {
+    this.cartService.addToCart(this.product);
+  }
+
+
+
 }

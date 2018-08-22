@@ -3,6 +3,8 @@ import { AngularFireDatabase } from "angularfire2/database";
 import { Observable } from "rxjs/Observable";
 import { ShoppingCart } from "../models/shopping-cart.model";
 import "rxjs/add/operator/map";
+import { Product } from "../models/product.model";
+import 'rxjs/add/operator/take';
 
 @Injectable()
 export class ShoppingCartService {
@@ -33,5 +35,29 @@ export class ShoppingCartService {
   async clearCart() {
     let cartId = await this.getOrCreateCartId();
     this.db.object("shopping-carts/" + cartId + "/items").remove();
+  }
+
+  async addToCart(product: Product) {
+    this.updateItem(product, 1);  
+  }
+
+  private getItem(cartId: string, productId: string) {
+    return this.db.object('/shopping-carts/' + cartId + '/items/' + productId);
+  }
+
+  private async updateItem(product: Product, change: number){
+    let cartId = await this.getOrCreateCartId();
+    let item$ = this.getItem(cartId,product.$key);
+
+    item$.take(1).subscribe(item => {
+      let quantity = (item.quantity || 0 ) + change;
+      if(quantity === 0) item$.remove();
+      else item$.update({ 
+        title: product.title,
+        imageUrl: product.imageUrl,
+        price: product.price,
+        quantity: quantity
+      });
+    });
   }
 }
