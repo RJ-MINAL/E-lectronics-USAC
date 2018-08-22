@@ -1,15 +1,25 @@
-import { Component, OnInit } from '@angular/core';
-//Agui se importara los componentes de producto, el carrito de compras
-// Y el servicio para el carrito de compras
+import { ShoppingCart } from './../models/shopping-cart.model';
+import { ShoppingCartService } from './../services/shopping-cart.service';
+import { Product } from './../models/product.model';
+import { Component, Input } from '@angular/core';
+
 @Component({
-  selector: 'app-product-card',
+  selector: 'product-card',
   templateUrl: './product-card.component.html',
   styleUrls: ['./product-card.component.css']
 })
-export class ProductCardComponent{
+export class ProductCardComponent {
+  @Input('product') product: Product;
+  @Input('show-actions') showActions = true;
+  @Input('shopping-cart') shoppingCart: ShoppingCart;
 
- //aqui agregaremos los componentes 
-  constructor() { }
+  constructor(private cartService: ShoppingCartService) { }
+
+  //agregando al carrito de compras
+  addToCart() {
+    this.cartService.addToCart(this.product);
+  }
+
 
 
 }

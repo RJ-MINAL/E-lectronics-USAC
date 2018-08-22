@@ -1,12 +1,14 @@
-
-
-<img *ngIf="product.imageUrl" class="card-img-top" [src]="product.imageUrl" alt="{{ product.title }}">
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="..." alt="Card image cap">
+<div *ngIf="product.title"  class="card">
+  <img *ngIf="product.imageUrl" class="card-img-top" [src]="product.imageUrl" alt="{{ product.title }}">
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <h5 class="card-title">Titulo: {{ product.title }}</h5>
+    <p class="card-text">Precio: {{ product.price | Moneda:'Q':true }}</p>
+  </div>
+  <div *ngIf="showActions && shoppingCart" class="card-footer">
+    <button
+      *ngIf="shoppingCart.getQuantity(product) === 0;"
+      (click)="addToCart()"
+      class="btn btn-secondary btn-block"
+    >Agregar al Carrito</button>
   </div>
 </div>
-

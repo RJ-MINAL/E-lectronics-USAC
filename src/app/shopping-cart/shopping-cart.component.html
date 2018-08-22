@@ -1,0 +1,44 @@
+<h1>Carro de compras</h1>
+<div class="row col-10" *ngIf="cart$ | async as cart">
+  <p>
+    Tienes {{ cart.totalItemsCount }} productos en el carro de compras.
+    <button *ngIf="cart.items.length" (click)="clearCart()" class="btn btn-light btn-sm">
+      Remover productos del carro
+    </button>
+  </p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Producto</th>
+        <th class="text-center" style="width: 230px">Cantidad</th>
+        <th class="text-right" style="width: 200px">Precio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of cart.items">
+        <td>
+          <div class="thumbnail" [style.backgroundImage]="'url(' + item.imageUrl + ')'"></div>
+        </td>
+        <td>
+          {{ item.title }}
+        </td>
+        <td class="text-center" style="width: 230px">
+          {{ item.quantity }}
+        </td>
+        <td class="text-right">
+          {{ item.totalPrice | currency:'GTQ':'Q' }}
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th class="text-right">{{ cart.totalPrice | currency:'GTQ':'Q' }}</th>
+      </tr>
+    </tfoot>
+  </table>
+  <button class="btn btn-primary">Comprar</button>
+</div>
