@@ -1,25 +1,28 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ProductCardComponent } from "./product-card.component";
+import { ShoppingCartService } from "../services/shopping-cart.service";
 
-import { ProductCardComponent } from './product-card.component';
-
-describe('ProductCardComponent', () => {
-  let component: ProductCardComponent;
-  let fixture: ComponentFixture<ProductCardComponent>;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ ProductCardComponent ]
-    })
-    .compileComponents();
-  }));
+describe("ProductCardComponent", () => {
+  let servicio: ShoppingCartService;
+  let componente: ProductCardComponent;
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ProductCardComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    servicio = new ShoppingCartService(null);
+    componente = new ProductCardComponent(servicio);
   });
 
-  it('should be created', () => {
-    expect(component).toBeTruthy();
+
+  //PRODUCTO CARD COMPOMENT -- AGREGANDO PRUEBAS UNITARIAS!
+
+  it("Componente product-card deberia ser creado", () => {
+    expect(servicio).toBeTruthy();
+    expect(componente).toBeTruthy();
+  });
+
+  it("Deberia llamar al servicio ShoppingCart", () => {
+    let spy = spyOn(servicio,"addToCart").and.callFake(() => {
+      return true;
+    });
+  
+    expect(spy).toHaveBeenCalled();
   });
 });
