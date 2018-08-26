@@ -1,6 +1,6 @@
-import { ShoppingCart } from "./../models/shopping-cart.model";
+import { ShoppingCart } from "../shared/models/shopping-cart.model";
 import { ShoppingCartComponent } from "./shopping-cart.component";
-import { ShoppingCartService } from "./../services/shopping-cart.service";
+import { ShoppingCartService } from "../shared/services/shopping-cart.service";
 import { Observable } from "rxjs/Observable";
 import "rxjs/add/observable/from";
 import "rxjs/add/observable/empty";

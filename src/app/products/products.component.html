@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-3">
+    <div class="list-group">
+      <a class="list-group-item list-group-item-action active">Todos</a>
+      <a class="list-group-item list-group-item-action">Destacados</a>
+      <a class="list-group-item list-group-item-action">Descuentos</a>
+    </div>
+  </div>
+  <div class="col">
+    <div class="row">
+      <ng-container *ngFor="let p of products; let i = index">
+        <div class="col-4">
+          <product-card [product]="p"></product-card>
+        </div>
+        <div *ngIf="(i+1)%3 === 0" class="w-100"></div>
+      </ng-container>
+    </div>
+  </div>
+</div>
