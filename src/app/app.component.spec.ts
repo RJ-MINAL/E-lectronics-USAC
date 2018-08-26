@@ -11,7 +11,7 @@ import { AppComponent } from "./app.component";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { ShoppingCartComponent } from "./shopping-cart/shopping-cart.component";
 
-import { ShoppingCartService } from "./services/shopping-cart.service";
+import { ShoppingCartService } from "./shared/services/shopping-cart.service";
 import { APP_BASE_HREF } from "@angular/common";
 
 describe("AppComponent", () => {

@@ -8,17 +8,20 @@ import { AngularFireAuthModule } from "angularfire2/auth";
 
 import { AppComponent } from "./app.component";
 import { NavbarComponent } from "./navbar/navbar.component";
+import { ProductsComponent } from "./products/products.component";
 import { ShoppingCartComponent } from "./shopping-cart/shopping-cart.component";
 import { ProductCardComponent } from "./product-card/product-card.component";
 
-import { ShoppingCartService } from "./services/shopping-cart.service";
+import { ProductService } from "./shared/services/product.service";
+import { ShoppingCartService } from "./shared/services/shopping-cart.service";
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     ShoppingCartComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
@@ -26,12 +29,13 @@ import { ShoppingCartService } from "./services/shopping-cart.service";
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     RouterModule.forRoot([
-      { path: "", component: ShoppingCartComponent },
+      { path: "", component: ProductsComponent },
+      { path: "products", component: ProductsComponent },
       { path: "shopping-cart", component: ShoppingCartComponent },
       { path: "**", component: ShoppingCartComponent }
     ])
   ],
-  providers: [ShoppingCartService],
+  providers: [ShoppingCartService, ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
