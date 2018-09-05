@@ -14,6 +14,7 @@ import { ProductCardComponent } from "./product-card/product-card.component";
 
 import { ProductService } from "./shared/services/product.service";
 import { ShoppingCartService } from "./shared/services/shopping-cart.service";
+import { ProductFormComponent } from './product-form/product-form.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ShoppingCartService } from "./shared/services/shopping-cart.service";
     NavbarComponent,
     ShoppingCartComponent,
     ProductCardComponent,
-    ProductsComponent
+    ProductsComponent,
+    ProductFormComponent
   ],
   imports: [
     BrowserModule,
