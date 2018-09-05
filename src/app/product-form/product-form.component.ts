@@ -1,6 +1,10 @@
 import { Component } from "@angular/core";
 
-@Component({})
+@Component({
+  selector: "product-form",
+  templateUrl: "./product-form.component.html",
+  styleUrls: ["./product-form.component.css"]
+})
 export class ProductFormComponent {
   constructor() {}
 }
