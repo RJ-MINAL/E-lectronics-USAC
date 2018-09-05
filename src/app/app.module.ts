@@ -8,13 +8,13 @@ import { AngularFireAuthModule } from "angularfire2/auth";
 
 import { AppComponent } from "./app.component";
 import { NavbarComponent } from "./navbar/navbar.component";
-
+import { ProductsComponent } from "./products/products.component";
 import { ShoppingCartComponent } from "./shopping-cart/shopping-cart.component";
 import { ProductCardComponent } from "./product-card/product-card.component";
 
 import { ProductService } from "./shared/services/product.service";
 import { ShoppingCartService } from "./shared/services/shopping-cart.service";
-import { ProductsComponent } from "./products/products.component";
+import { ProductFormComponent } from "./product-form/product-form.component";
 
 @NgModule({
   declarations: [
@@ -22,7 +22,8 @@ import { ProductsComponent } from "./products/products.component";
     NavbarComponent,
     ShoppingCartComponent,
     ProductCardComponent,
-    ProductsComponent
+    ProductsComponent,
+    ProductFormComponent
   ],
   imports: [
     BrowserModule,
