@@ -9,7 +9,6 @@ branches:
   - development
   - hu-014
 
-
 addons:
   chrome: stable
 
