@@ -2,14 +2,18 @@ language: node_js
 node_js:
   - "8.11.1"
 
- branches:
+# safelist
+branches:
+  only:
   - v2.0.0
+  - development
+  - hu-014
 
 addons:
   chrome: stable
 
 before_script:
-  - yarn global add @angular/cli
+  - yarn global add @angular/cli@1.2.4
 
 cache:
   yarn: true
@@ -17,6 +21,8 @@ cache:
     - node_modules
 
 script:
+  - ng lint
+  - ng test --watch=false
   - ng build --prod
 
 deploy:
