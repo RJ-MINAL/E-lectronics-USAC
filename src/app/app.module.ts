@@ -32,6 +32,7 @@ import { ProductFormComponent } from './product-form/product-form.component';
     AngularFireAuthModule,
     RouterModule.forRoot([
       { path: '', component: ProductsComponent },
+      { path: 'new', component: ProductFormComponent },
       { path: 'products', component: ProductsComponent },
       { path: 'shopping-cart', component: ShoppingCartComponent },
       { path: '**', component: ShoppingCartComponent }
