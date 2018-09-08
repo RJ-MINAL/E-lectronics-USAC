@@ -1,13 +1,13 @@
-import { ProductCardComponent } from "./product-card.component";
+import { ProductCardComponent } from './product-card.component';
 
-describe("ProductCardComponent", () => {
+describe('ProductCardComponent', () => {
   let component: ProductCardComponent;
 
   beforeEach(() => {
     component = new ProductCardComponent();
   });
 
-  it("Componente product-card deberia ser creado", () => {
+  it('Componente product-card deberia ser creado', () => {
     expect(component).toBeTruthy();
   });
 });
