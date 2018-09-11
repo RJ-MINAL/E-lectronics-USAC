@@ -8,9 +8,9 @@ describe("ProductCardComponent", () => {
   });
 
  //prueba unitaria
+ //prettier
   it("Componente product-card deberia ser creado", () => {
     expect(component).toBeTruthy();
   });
 
-  
 });
