@@ -21,7 +21,7 @@ cache:
 
 script:
   - ng test --watch=false
-  - ng build --prod
+  - ng build --prod --aot=false
 
 deploy:
   provider: pages
