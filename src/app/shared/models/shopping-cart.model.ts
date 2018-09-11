@@ -1,7 +1,7 @@
 import { ShoppingCartItem } from "./shopping-cart-item.model";
 import { Product } from "./product.model";
 
-export class ShoppingCart {
+export class ShoppingCart{
   items: ShoppingCartItem[] = [];
 
   constructor(private itemsMap: { [productId: string]: ShoppingCartItem }) {
@@ -24,4 +24,9 @@ export class ShoppingCart {
     for (let productId in this.items) count += this.items[productId].quantity;
     return count;
   }
+
+  getQuantity(product: Product) {
+    let item = this.itemsMap[product.$key];
+    return item? item.quantity : 0;
+}
 }
