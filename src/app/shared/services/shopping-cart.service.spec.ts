@@ -1,12 +1,12 @@
-import { TestBed, inject } from "@angular/core/testing";
+import { TestBed, inject } from '@angular/core/testing';
 
-import { ShoppingCartService } from "./shopping-cart.service";
-import { AngularFireModule } from "angularfire2";
-import { AngularFireDatabaseModule } from "angularfire2/database";
-import { AngularFireAuthModule } from "angularfire2/auth";
-import { environment } from "../../../environments/environment";
+import { ShoppingCartService } from './shopping-cart.service';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { environment } from '../../../environments/environment';
 
-describe("ShoppingCartService", () => {
+describe('ShoppingCartService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [
@@ -18,7 +18,7 @@ describe("ShoppingCartService", () => {
     });
   });
 
-  it("Servicio deberia ser creado e inyectado", inject(
+  it('Servicio deberia ser creado e inyectado', inject(
     [ShoppingCartService],
     (service: ShoppingCartService) => {
       expect(service).toBeTruthy();

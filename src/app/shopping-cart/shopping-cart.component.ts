@@ -1,12 +1,12 @@
-import { ShoppingCartService } from "../shared/services/shopping-cart.service";
-import { Component, OnInit } from "@angular/core";
-import { Observable } from "rxjs/Observable";
-import { ShoppingCart } from "../shared/models/shopping-cart.model";
+import { ShoppingCartService } from '../shared/services/shopping-cart.service';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { ShoppingCart } from '../shared/models/shopping-cart.model';
 
 @Component({
-  selector: "app-shopping-cart",
-  templateUrl: "./shopping-cart.component.html",
-  styleUrls: ["./shopping-cart.component.css"]
+  selector: 'app-shopping-cart',
+  templateUrl: './shopping-cart.component.html',
+  styleUrls: ['./shopping-cart.component.css']
 })
 export class ShoppingCartComponent implements OnInit {
   cart$: Observable<ShoppingCart>;

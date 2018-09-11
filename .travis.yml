@@ -6,6 +6,7 @@ node_js:
 branches:
   only:
   - v2.0.0
+  - development
 
 addons:
   chrome: stable
@@ -20,7 +21,7 @@ cache:
 
 script:
   - ng test --watch=false
-  - ng build --prod
+  - ng build --prod --aot=false
 
 deploy:
   provider: pages
