@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { DataTableModule } from 'angular-4-data-table';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -16,6 +17,7 @@ import { ProductService } from './shared/services/product.service';
 import { ShoppingCartService } from './shared/services/shopping-cart.service';
 import { ProductFormComponent } from './product-form/product-form.component';
 import { ProductQuantityComponent } from './product-quantity/product-quantity.component';
+import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
 
 @NgModule({
   declarations: [
@@ -25,17 +27,22 @@ import { ProductQuantityComponent } from './product-quantity/product-quantity.co
     ProductCardComponent,
     ProductsComponent,
     ProductFormComponent,
-    ProductQuantityComponent
+    ProductQuantityComponent,
+    AdminProductsComponent
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    DataTableModule,
     RouterModule.forRoot([
       { path: '', component: ProductsComponent },
+      { path: 'new', component: ProductFormComponent },
       { path: 'products', component: ProductsComponent },
       { path: 'shopping-cart', component: ShoppingCartComponent },
+      { path: 'admin/products', component: AdminProductsComponent },
+      { path: 'admin/products/:id', component: ProductFormComponent },
       { path: '**', component: ShoppingCartComponent }
     ])
   ],
