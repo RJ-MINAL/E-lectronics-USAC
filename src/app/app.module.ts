@@ -36,7 +36,10 @@ import { ProductQuantityComponent } from './product-quantity/product-quantity.co
       { path: "", component: ProductsComponent },
       { path: "products", component: ProductsComponent },
       { path: "shopping-cart", component: ShoppingCartComponent },
+      { path: "product-quantity", component: ProductQuantityComponent}, //redirecciona a product-quantity
       { path: "**", component: ShoppingCartComponent }
+
+      
     ])
   ],
   providers: [ShoppingCartService, ProductService],

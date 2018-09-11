@@ -7,7 +7,10 @@ describe("ProductCardComponent", () => {
     component = new ProductCardComponent();
   });
 
+ //prueba unitaria
   it("Componente product-card deberia ser creado", () => {
     expect(component).toBeTruthy();
   });
+
+  
 });
