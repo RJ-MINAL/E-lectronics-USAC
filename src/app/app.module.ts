@@ -16,6 +16,7 @@ import { ProductCardComponent } from './product-card/product-card.component';
 import { ProductService } from './shared/services/product.service';
 import { ShoppingCartService } from './shared/services/shopping-cart.service';
 import { ProductFormComponent } from './product-form/product-form.component';
+import { ProductQuantityComponent } from './product-quantity/product-quantity.component';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
 import { FormsModule } from '@angular/forms';
 import { CustomFormsModule } from 'ng2-validation';
@@ -28,6 +29,7 @@ import { CustomFormsModule } from 'ng2-validation';
     ProductCardComponent,
     ProductsComponent,
     ProductFormComponent,
+    ProductQuantityComponent,
     AdminProductsComponent
   ],
   imports: [
