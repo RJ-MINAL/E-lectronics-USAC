@@ -4,7 +4,7 @@ import { ProductCardComponent } from "./product-card.component";
 describe("ProductCardComponent", () => {
   let component: ProductCardComponent;
   let fixture: ComponentFixture<ProductCardComponent>;
-
+  
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ ProductCardComponent ]
@@ -22,6 +22,11 @@ describe("ProductCardComponent", () => {
  //prettier
   it("Componente product-card deberia ser creado", () => {
     expect(component).toBeTruthy();
+  });
+
+  
+  it("Deberia retornar 2 como cantidad de productos de items", () => {
+    expect(component.product).toBe(2);
   });
 
 });
