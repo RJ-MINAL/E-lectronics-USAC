@@ -29,4 +29,8 @@ describe("ProductCardComponent", () => {
     expect(component.product).toBe(2);
   });
 
+  it("Deberia mostrar las accione", () => {
+    expect(component.showActions).toBe(2);
+  });
+
 });
