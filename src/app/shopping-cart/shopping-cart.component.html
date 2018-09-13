@@ -40,5 +40,9 @@
       </tr>
     </tfoot>
   </table>
-  <button class="btn btn-primary">Comprar</button>
+      <button
+    *ngIf="cart.items.length"
+    class="btn btn-primary"
+    routerLink="/Comprar"
+    >Comprar</button>
 </div>
