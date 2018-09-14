@@ -10,10 +10,14 @@ export class CategoryService {
     return this.db.list("/categories").push(category);
   }
 
-  getAll() {
-    return this.db.list("/categories");
-  }
-
+  getAll(){
+    return this.db.list('/categories',{ 
+      query: { 
+        orderByChild: 'name' 
+      }
+    });
+  }  
+  
   get(category) {
     return this.db.object("/categories/" + category);
   }

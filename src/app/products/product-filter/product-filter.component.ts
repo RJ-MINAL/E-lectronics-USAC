@@ -13,5 +13,4 @@ export class ProductFilterComponent {
   constructor(private categoryService:CategoryService) {
     this.categories$ = categoryService.getAll();
   }
-
 }

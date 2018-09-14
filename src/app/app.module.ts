@@ -15,6 +15,8 @@ import { ProductCardComponent } from "./product-card/product-card.component";
 import { ProductService } from "./shared/services/product.service";
 import { ShoppingCartService } from "./shared/services/shopping-cart.service";
 import { ProductFormComponent } from './product-form/product-form.component';
+import { ProductFilterComponent } from "./products/product-filter/product-filter.component";
+import { CategoryService } from "./shared/services/category.service";
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { ProductFormComponent } from './product-form/product-form.component';
     ShoppingCartComponent,
     ProductCardComponent,
     ProductsComponent,
-    ProductFormComponent
+    ProductFormComponent,
+    ProductFilterComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,7 @@ import { ProductFormComponent } from './product-form/product-form.component';
       { path: "**", component: ShoppingCartComponent }
     ])
   ],
-  providers: [ShoppingCartService, ProductService],
+  providers: [ShoppingCartService, ProductService, CategoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
