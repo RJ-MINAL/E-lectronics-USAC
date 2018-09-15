@@ -42,7 +42,6 @@ import { CustomFormsModule } from 'ng2-validation';
     CustomFormsModule,
     RouterModule.forRoot([
       { path: '', component: ProductsComponent },
-      { path: 'new', component: ProductFormComponent },
       { path: 'products', component: ProductsComponent },
       { path: 'shopping-cart', component: ShoppingCartComponent },
       { path: 'admin/products', component: AdminProductsComponent },
