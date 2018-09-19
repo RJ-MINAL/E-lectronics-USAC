@@ -18,6 +18,7 @@ import { ShoppingCartService } from './shared/services/shopping-cart.service';
 import { ProductFormComponent } from './product-form/product-form.component';
 import { ProductQuantityComponent } from './product-quantity/product-quantity.component';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
+import { DeleteProductoComponent } from './delete-producto/delete-producto.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AdminProductsComponent } from './admin/admin-products/admin-products.co
     ProductsComponent,
     ProductFormComponent,
     ProductQuantityComponent,
-    AdminProductsComponent
+    AdminProductsComponent,
+    DeleteProductoComponent
   ],
   imports: [
     BrowserModule,
