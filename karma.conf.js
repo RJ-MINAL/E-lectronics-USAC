@@ -3,8 +3,8 @@
 
 module.exports = function(config) {
   config.set({
-    browsers: ['Chrome'],
-    //browsers: ['MyHeadlessChrome'],
+    //browsers: ['Chrome'],
+    browsers: ['MyHeadlessChrome'],
     customLaunchers: {
       MyHeadlessChrome: {
         base: 'ChromeHeadless',
