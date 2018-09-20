@@ -1,9 +1,13 @@
 <div class="row">
   <div class="col-md-6">
-    <form>
+    <form #f="ngForm">
       <div class="form-group">
         <label for="title">Titulo</label>
-        <input name="title" id="title" type="text" class="form-control">
+        <input [(ngModel)]="product.title" name="title" #title="ngModel" id="title" type="text" class="form-control"
+          required>
+        <div *ngIf="title.touched && title.invalid" class="alert alert-danger">
+          El Titulo es requerido.
+        </div>
       </div>
       <div class="form-group">
         <label for="price">Precio</label>
@@ -11,12 +15,18 @@
           <div class="input-group-prepend">
             <span class="input-group-text">Q</span>
           </div>
-          <input type="number" class="form-control">
+          <input #price="ngModel" [(ngModel)]="product.price" name="price" id="price" type="number" class="form-control"
+            required [min]="0">
+        </div>
+        <div *ngIf="price.touched && price.invalid" class="alert alert-danger">
+          <div *ngIf="price.errors.required">Precio es requerido.</div>
+          <div *ngIf="price.errors.min">Precio deberia ser 0 o mayor.</div>
         </div>
       </div>
       <div class="form-group">
         <label for="category">Categoria</label>
-        <select name="category" name="category" id="category" class="form-control">
+        <select #category="ngModel" [(ngModel)]="product.category" name="category" name="category" id="category" class="form-control"
+          required>
           <option value=""></option>
           <option value="best">Best Sellers</option>
           <option value="descuentos">Descuentos</option>
@@ -24,16 +34,23 @@
           <option value="nuevos">Nuevos Productos</option>
           <option value="proximamente">Proximamente</option>
         </select>
+        <div *ngIf="category.touched && category.invalid" class="alert alert-danger">
+          Categoria es requerida.
+        </div>
       </div>
       <div class="form-group">
-        <label for="imageUrl">Imagen URL</label>
-        <input name="imageUrl" id="imageUrl" type="text" class="form-control" url>
+        <input #imageUrl="ngModel" [(ngModel)]="product.imageUrl" name="imageUrl" id="imageUrl" type="text" class="form-control"
+          required url>
+        <div *ngIf="imageUrl.touched && imageUrl.invalid" class="alert alert-danger">
+          <div *ngIf="imageUrl.errors.required">Un URL para imagen es requerido.</div>
+          <div *ngIf="imageUrl.errors.url">Porfavor entrar un URL valido.</div>
+        </div>
       </div>
       <button class="btn btn-primary">Guardar</button>
       <button type="button" class="btn btn-danger">Eliminar</button>
     </form>
   </div>
   <div class="col-md-6">
-    <product-card [product]="product"></product-card>
+    <product-card [product]="product" [show-actions]="false"></product-card>
   </div>
 </div>

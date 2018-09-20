@@ -18,6 +18,8 @@ import { ShoppingCartService } from './shared/services/shopping-cart.service';
 import { ProductFormComponent } from './product-form/product-form.component';
 import { ProductQuantityComponent } from './product-quantity/product-quantity.component';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
+import { FormsModule } from '@angular/forms';
+import { CustomFormsModule } from 'ng2-validation';
 
 @NgModule({
   declarations: [
@@ -36,9 +38,10 @@ import { AdminProductsComponent } from './admin/admin-products/admin-products.co
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     DataTableModule,
+    FormsModule,
+    CustomFormsModule,
     RouterModule.forRoot([
       { path: '', component: ProductsComponent },
-      { path: 'new', component: ProductFormComponent },
       { path: 'products', component: ProductsComponent },
       { path: 'shopping-cart', component: ShoppingCartComponent },
       { path: 'admin/products', component: AdminProductsComponent },

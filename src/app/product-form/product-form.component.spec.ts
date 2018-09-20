@@ -1,22 +1,16 @@
-import { ProductCardComponent } from './../product-card/product-card.component';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ActivatedRoute } from '@angular/router';
 import { ProductFormComponent } from './product-form.component';
+import { ProductService } from '../shared/services/product.service';
 
 describe('ProductFormComponent', () => {
   let component: ProductFormComponent;
-  let fixture: ComponentFixture<ProductFormComponent>;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ProductFormComponent, ProductCardComponent]
-    }).compileComponents();
-  }));
+  let service: ProductService;
+  let route: ActivatedRoute;
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ProductFormComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    service = new ProductService(null);
+    route = new ActivatedRoute();
+    component = new ProductFormComponent(service, route);
   });
 
   it('El componente ProductForm deberia ser creado', () => {
@@ -26,16 +20,4 @@ describe('ProductFormComponent', () => {
   it('El componente deberia tener un objeto llamado product', () => {
     expect(component.product).toBeTruthy();
   });
-
-  // it('el componente deberia ser creado', async(() => {
-  //   const fixture = TestBed.createComponent(ProductFormComponent);
-  //   const comp = fixture.debugElement.componentInstance;
-  //   expect(comp).toBeTruthy();
-  // }));
-
-  // it('deberia tener un objeto producto', async(() => {
-  //   const fixture = TestBed.createComponent(ProductFormComponent);
-  //   const comp = fixture.debugElement.componentInstance;
-  //   expect(comp.product).toBeTruthy();
-  // }));
 });
