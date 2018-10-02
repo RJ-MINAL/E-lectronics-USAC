@@ -6,7 +6,6 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { DataTableModule } from 'angular-4-data-table';
-import {NgForm, FormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -19,7 +18,7 @@ import { ShoppingCartService } from './shared/services/shopping-cart.service';
 import { ProductFormComponent } from './product-form/product-form.component';
 import { ProductQuantityComponent } from './product-quantity/product-quantity.component';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
-import { FormsModule } from '@angular/forms';
+import {NgForm, FormsModule} from '@angular/forms';
 import { CustomFormsModule } from 'ng2-validation';
 
 @NgModule({
