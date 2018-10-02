@@ -3,38 +3,39 @@
 
 module.exports = function(config) {
   config.set({
-    browsers: ["MyHeadlessChrome"],
+    //browsers: ['Chrome'],
+    browsers: ['MyHeadlessChrome'],
     customLaunchers: {
       MyHeadlessChrome: {
-        base: "ChromeHeadless",
+        base: 'ChromeHeadless',
         flags: [
-          "--disable-translate",
-          "--disable-extensions",
-          "--remote-debugging-port=9223",
-          "--no-sandbox"
+          '--disable-translate',
+          '--disable-extensions',
+          '--remote-debugging-port=9223',
+          '--no-sandbox'
         ]
       }
     },
-    basePath: "",
-    frameworks: ["jasmine", "@angular/cli"],
+    basePath: '',
+    frameworks: ['jasmine', '@angular/cli'],
     plugins: [
-      require("karma-jasmine"),
-      require("karma-chrome-launcher"),
-      require("karma-jasmine-html-reporter"),
-      require("karma-coverage-istanbul-reporter"),
-      require("@angular/cli/plugins/karma")
+      require('karma-jasmine'),
+      require('karma-chrome-launcher'),
+      require('karma-jasmine-html-reporter'),
+      require('karma-coverage-istanbul-reporter'),
+      require('@angular/cli/plugins/karma')
     ],
     client: {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
     coverageIstanbulReporter: {
-      reports: ["html", "lcovonly"],
+      reports: ['html', 'lcovonly'],
       fixWebpackSourcePaths: true
     },
     angularCli: {
-      environment: "dev"
+      environment: 'dev'
     },
-    reporters: ["progress", "kjhtml"],
+    reporters: ['progress', 'kjhtml'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,

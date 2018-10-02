@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ProductCardComponent } from "./product-card.component";
 
-describe("ProductCardComponent", () => {
+describe('ProductCardComponent', () => {
   let component: ProductCardComponent;
   let fixture: ComponentFixture<ProductCardComponent>;
   
@@ -32,5 +32,6 @@ describe("ProductCardComponent", () => {
   it("Deberia mostrar las accione", () => {
     expect(component.showActions).toBe(2);
   });
+
 
 });
