@@ -18,7 +18,7 @@ import { ShoppingCartService } from './shared/services/shopping-cart.service';
 import { ProductFormComponent } from './product-form/product-form.component';
 import { ProductQuantityComponent } from './product-quantity/product-quantity.component';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
-import { FormsModule } from '@angular/forms';
+import {NgForm, FormsModule} from '@angular/forms';
 import { CustomFormsModule } from 'ng2-validation';
 
 @NgModule({
@@ -44,6 +44,7 @@ import { CustomFormsModule } from 'ng2-validation';
       { path: '', component: ProductsComponent },
       { path: 'products', component: ProductsComponent },
       { path: 'shopping-cart', component: ShoppingCartComponent },
+      { path: "product-quantity", component: ProductQuantityComponent}, //redirecciona a product-quantity
       { path: 'admin/products', component: AdminProductsComponent },
       { path: 'admin/products/:id', component: ProductFormComponent },
       { path: '**', component: ShoppingCartComponent }
