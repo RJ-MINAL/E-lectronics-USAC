@@ -31,6 +31,4 @@ describe('ShoppingCartModel', () => {
   it('Deberia retornar 4 como cantidad total de items en el carro', () => {
     expect(model.totalItemsCount).toBe(4);
   });
-
-
 });
