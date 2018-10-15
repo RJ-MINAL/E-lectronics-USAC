@@ -1,17 +1,37 @@
-import { ProductCardComponent } from './product-card.component';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ProductCardComponent } from "./product-card.component";
 
 describe('ProductCardComponent', () => {
   let component: ProductCardComponent;
+  let fixture: ComponentFixture<ProductCardComponent>;
+  
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ ProductCardComponent ]
+    })
+    .compileComponents();
+  }));
 
   beforeEach(() => {
-    component = new ProductCardComponent();
+    fixture = TestBed.createComponent(ProductCardComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
   });
-
-  it('Componente product-card deberia ser creado', () => {
+  
+ //prueba unitaria
+ //prettier
+  it("Componente product-card deberia ser creado", () => {
     expect(component).toBeTruthy();
   });
 
-  it('Componente product-card deberia tener variable showActions con valor verdadero', () => {
-    expect(component.showActions).toBeTruthy();
+  
+  it("Deberia retornar 2 como cantidad de productos de items", () => {
+    expect(component.product).toBe(2);
   });
+
+  it("Deberia mostrar las accione", () => {
+    expect(component.showActions).toBe(2);
+  });
+
+
 });

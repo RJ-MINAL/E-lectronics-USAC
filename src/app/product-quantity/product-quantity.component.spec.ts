@@ -4,6 +4,7 @@ import { ProductQuantityComponent } from './product-quantity.component';
 
 describe('ProductQuantityComponent', () => {
   let component: ProductQuantityComponent;
+
   let fixture: ComponentFixture<ProductQuantityComponent>;
 
   beforeEach(async(() => {
@@ -19,7 +20,15 @@ describe('ProductQuantityComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should be created', () => {
+  //pruebas unitarias
+    //prettier
+  it('componente product quantity deberia de ser creado', () => {
     expect(component).toBeTruthy();
   });
+
+  /*it("ShoppingCartComponent deberia crearse", () => {
+    expect(service).toBeTruthy();
+    expect(component).toBeTruthy();
+  });*/
+
 });
