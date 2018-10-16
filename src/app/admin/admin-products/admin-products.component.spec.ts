@@ -1,4 +1,4 @@
-import { Product } from './../../shared/models/product.model';
+import { Product } from '../../shared/models/product.model';
 import { AdminProductsComponent } from './admin-products.component';
 import { ProductService } from '../../shared/services/product.service';
 import { Observable } from 'rxjs/Observable';
