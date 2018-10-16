@@ -20,6 +20,7 @@ import { ProductQuantityComponent } from './product-quantity/product-quantity.co
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
 import { FormsModule } from '@angular/forms';
 import { CustomFormsModule } from 'ng2-validation';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { CustomFormsModule } from 'ng2-validation';
     ProductsComponent,
     ProductFormComponent,
     ProductQuantityComponent,
-    AdminProductsComponent
+    AdminProductsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
