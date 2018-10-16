@@ -47,6 +47,8 @@ import { LoginComponent } from './login/login.component';
       { path: 'products', component: ProductsComponent },
       { path: 'shopping-cart', component: ShoppingCartComponent },
       { path: 'admin/products', component: AdminProductsComponent },
+      { path: 'login', component: LoginComponent },
+
       { path: 'admin/products/:id', component: ProductFormComponent },
       { path: '**', component: ShoppingCartComponent }
     ])
