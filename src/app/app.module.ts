@@ -22,12 +22,14 @@ import { AdminProductsComponent } from './admin/admin-products/admin-products.co
 import { FormsModule } from '@angular/forms';
 import { CustomFormsModule } from 'ng2-validation';
 import { AuthGuard } from './shared/services/auth-guard.service';
+import {ShippingFormComponent} from './shipping-form/shipping-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     ShoppingCartComponent,
+    ShippingFormComponent,
     ProductCardComponent,
     ProductsComponent,
     ProductFormComponent,
