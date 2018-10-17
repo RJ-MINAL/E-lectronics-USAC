@@ -1,15 +1,25 @@
-import { TestBed, inject } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ShippingFormService } from './shipping-form.component';
+import { ShippingFormComponent } from './shipping-form.component';
 
-describe('ShippingFormService', () => {
-  beforeEach(() => {
+describe('ShippingFormComponent', () => {
+  let component: ShippingFormComponent;
+  let fixture: ComponentFixture<ShippingFormComponent>;
+
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
-      providers: [ShippingFormService]
-    });
+      declarations: [ ShippingFormComponent ]
+    })
+    .compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(ShippingFormComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
   });
 
-  it('should be created', inject([ShippingFormService], (service: ShippingFormService) => {
-    expect(service).toBeTruthy();
-  }));
+  it('should be created', () => {
+    expect(component).toBeTruthy();
+  });
 });
