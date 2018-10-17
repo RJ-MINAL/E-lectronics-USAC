@@ -12,6 +12,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ProductsComponent } from './products/products.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { ProductCardComponent } from './product-card/product-card.component';
+import { MyOrdersComponent } from './my-orders/my-orders.component';
 
 import { ProductService } from './shared/services/product.service';
 import { ShoppingCartService } from './shared/services/shopping-cart.service';
@@ -20,6 +21,7 @@ import { ProductQuantityComponent } from './product-quantity/product-quantity.co
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
 import { FormsModule } from '@angular/forms';
 import { CustomFormsModule } from 'ng2-validation';
+import { AuthGuard } from './shared/services/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { CustomFormsModule } from 'ng2-validation';
     ProductsComponent,
     ProductFormComponent,
     ProductQuantityComponent,
-    AdminProductsComponent
+    AdminProductsComponent,
+    MyOrdersComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +49,7 @@ import { CustomFormsModule } from 'ng2-validation';
       { path: 'shopping-cart', component: ShoppingCartComponent },
       { path: 'admin/products', component: AdminProductsComponent },
       { path: 'admin/products/:id', component: ProductFormComponent },
+      { path: 'my/orders', component: MyOrdersComponent, canActivate: [AuthGuard] },
       { path: '**', component: ShoppingCartComponent }
     ])
   ],
