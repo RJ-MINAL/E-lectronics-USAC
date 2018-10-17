@@ -19,7 +19,11 @@ describe('ShippingFormComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should be created', () => {
+  it('Componente shipping deberia ser ', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('carro de compras debe de contener productos para shipping', () => {
+    expect(component.cart).toBeTruthy();
   });
 });

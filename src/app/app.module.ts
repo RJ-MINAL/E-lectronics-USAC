@@ -20,6 +20,7 @@ import { ProductQuantityComponent } from './product-quantity/product-quantity.co
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
 import { FormsModule } from '@angular/forms';
 import { CustomFormsModule } from 'ng2-validation';
+import { ShippingFormComponent } from './shipping-form/shipping-form.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { CustomFormsModule } from 'ng2-validation';
       { path: 'shopping-cart', component: ShoppingCartComponent },
       { path: 'admin/products', component: AdminProductsComponent },
       { path: 'admin/products/:id', component: ProductFormComponent },
+     // { path: 'ship', component: ShippingFormComponent },
       { path: '**', component: ShoppingCartComponent }
     ])
   ],
