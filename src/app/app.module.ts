@@ -24,6 +24,7 @@ import { CustomFormsModule } from 'ng2-validation';
 import { AuthGuard } from './shared/services/auth-guard.service';
 import {ShippingFormComponent} from './shipping-form/shipping-form.component';
 import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { LoginComponent } from './login/login.component';
     ProductQuantityComponent,
     AdminProductsComponent,
     MyOrdersComponent,
-    LoginComponent
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
