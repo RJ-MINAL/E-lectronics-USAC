@@ -23,6 +23,7 @@ import { FormsModule } from '@angular/forms';
 import { CustomFormsModule } from 'ng2-validation';
 import { AuthGuard } from './shared/services/auth-guard.service';
 import {ShippingFormComponent} from './shipping-form/shipping-form.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,8 @@ import {ShippingFormComponent} from './shipping-form/shipping-form.component';
       { path: 'shopping-cart', component: ShoppingCartComponent },
       { path: 'admin/products', component: AdminProductsComponent },
       { path: 'admin/products/:id', component: ProductFormComponent },
+      { path: 'login', component: LoginComponent },
+      
       { path: 'my/orders', component: MyOrdersComponent, canActivate: [AuthGuard] },
       { path: '**', component: ShoppingCartComponent }
     ])
