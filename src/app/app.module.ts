@@ -6,14 +6,14 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { DataTableModule } from 'angular-4-data-table';
-
+import { AuthService } from './shared/services/auth.service';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProductsComponent } from './products/products.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { MyOrdersComponent } from './my-orders/my-orders.component';
-
+import { UserService } from './shared/services/user.service';
 import { ProductService } from './shared/services/product.service';
 import { ShoppingCartService } from './shared/services/shopping-cart.service';
 import { ProductFormComponent } from './product-form/product-form.component';
@@ -57,9 +57,15 @@ import { LoginComponent } from './login/login.component';
       
       { path: 'my/orders', component: MyOrdersComponent, canActivate: [AuthGuard] },
       { path: '**', component: ShoppingCartComponent }
+      
     ])
   ],
-  providers: [ShoppingCartService, ProductService],
+  providers: [
+    ShoppingCartService, 
+    ProductService,
+    AuthService,
+    AuthGuard,
+    UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
