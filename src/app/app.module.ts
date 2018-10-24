@@ -36,7 +36,8 @@ import { LoginComponent } from './login/login.component';
     ProductFormComponent,
     ProductQuantityComponent,
     AdminProductsComponent,
-    MyOrdersComponent
+    MyOrdersComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
