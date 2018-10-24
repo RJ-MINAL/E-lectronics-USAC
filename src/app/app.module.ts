@@ -58,6 +58,7 @@ import { LoginComponent } from './login/login.component';
       { path: 'my/orders', component: MyOrdersComponent, canActivate: [AuthGuard] },
       { path: '**', component: ShoppingCartComponent }
       
+      
     ])
   ],
   providers: [
