@@ -22,9 +22,10 @@ import { AdminProductsComponent } from './admin/admin-products/admin-products.co
 import { FormsModule } from '@angular/forms';
 import { CustomFormsModule } from 'ng2-validation';
 import { AuthGuard } from './shared/services/auth-guard.service';
-import {ShippingFormComponent} from './shipping-form/shipping-form.component';
+import { ShippingFormComponent } from './shipping-form/shipping-form.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { LogoutComponent } from './logout/logout.component';
     DataTableModule,
     FormsModule,
     CustomFormsModule,
+    NgbModule.forRoot(),
     RouterModule.forRoot([
       { path: '', component: ProductsComponent },
       { path: 'products', component: ProductsComponent },
@@ -56,19 +58,22 @@ import { LogoutComponent } from './logout/logout.component';
       { path: 'admin/products', component: AdminProductsComponent },
       { path: 'admin/products/:id', component: ProductFormComponent },
       { path: 'login', component: LoginComponent },
-      
-      { path: 'my/orders', component: MyOrdersComponent, canActivate: [AuthGuard] },
+
+      {
+        path: 'my/orders',
+        component: MyOrdersComponent,
+        canActivate: [AuthGuard]
+      },
       { path: '**', component: ShoppingCartComponent }
-      
-      
     ])
   ],
   providers: [
-    ShoppingCartService, 
+    ShoppingCartService,
     ProductService,
     AuthService,
     AuthGuard,
-    UserService],
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
